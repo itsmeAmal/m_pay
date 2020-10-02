@@ -20,8 +20,8 @@ public static final  DatabaseController instancD = new DatabaseController();
 	
 		String dbUrl = "jdbc:mysql://localhost:3306/digital_wallet_";
 		String dbUser= "root";
-		String dbPass= "root";
-		//String dbPass= "Nx2mD5RD2waHg8V";
+		//String dbPass= "root";
+		String dbPass= "Nx2mD5RD2waHg8V";
 		 		
 		try{
 			Class.forName ("com.mysql.jdbc.Driver").newInstance ();

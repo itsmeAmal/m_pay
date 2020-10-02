@@ -71,24 +71,24 @@ query = "UPDATE ProfileSubscriber ps SET ps.sOtp=?1 where ps.sMobileNumber=?2")
 public class ProfileSubscriber {
 
 
-	@NotBlank
+
 	@Column(name = "s_acc_no")
 	private String sAccNo;
 
-	@NotBlank
+
 	@Column(name = "s_pan_no")
 	private String sPanNo;
 	
 	@Id
-	@NotBlank
+
 	@Column(name = "s_mobile_number")
 	private String sMobileNumber;
 
-	@NotBlank
+
 	@Column(name = "s_name")
 	private String sName;
 
-	@NotBlank
+
 	@Column(name = "s_nic")
 	private String sNic;
 
@@ -96,11 +96,11 @@ public class ProfileSubscriber {
 	@Column(name = "s_dob")
 	private Date sDob;
 
-	@NotBlank
+
 	@Column(name = "s_gender")
 	private String sGender;
 
-	@NotBlank
+
 	@Column(name = "s_address")
 	private String sAddress;
 	

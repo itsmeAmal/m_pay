@@ -3,6 +3,8 @@ package com.mobios.beet.serviceImpl;
 import com.mobios.beet.model.*;
 import com.mobios.beet.repository.TransactionRepository;
 import com.mobios.beet.service.TransactionService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,8 @@ public class TransactionServiceImpl implements TransactionService {
 
 	@Autowired
 	TransactionRepository transactionRepositoy;
+
+	private static final Logger logger = LogManager.getLogger(TransactionServiceImpl.class);
 	
 	//get all transactions from 'transactions' table
 	@Override
@@ -97,7 +101,7 @@ public class TransactionServiceImpl implements TransactionService {
 	public String SaveTransaction(TransactionAll transaction) {
 		// TODO Auto-generated method stub
 		
-		
+		logger.info("Transaction type: " + transaction.getTransactionTypesId() + " ----- acc no: " + transaction.getUserAccNo() + "------ description: " + transaction.getDescription());
 		
 		//call the create_trans_id
 		String tid = transactionRepositoy.createTransactionId();

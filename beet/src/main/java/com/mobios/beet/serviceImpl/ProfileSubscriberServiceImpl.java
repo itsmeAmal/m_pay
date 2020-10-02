@@ -68,10 +68,15 @@ public class ProfileSubscriberServiceImpl implements ProfileSubscriberService {
 			//Boolean isOTPsend = otpSender.sendHtmlEmail(userName, password, "sahani@mobios.lk", "OTP verifcation for BEET", message, "");
 			int resCOde = sms.sendSMS(mobileNo , message);
 			System.out.println("workthe message 200");
+			System.out.println("resCode: "+resCOde);
+
+			System.out.println("ps obj: "+ps);
 			
 			if(ps==null) {
 				//check OTP send or not
-				if(resCOde== 200) {
+				System.out.println("ps==null");
+				if(resCOde == 200) {
+					System.out.println("resCOde == 200");
 					ProfileSubscriber pr = new ProfileSubscriber();
 					pr.setsMobileNumber(mobileNo);
 					pr.setsOtp(otp);

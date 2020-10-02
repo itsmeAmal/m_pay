@@ -98,25 +98,25 @@
     <script src="global_assets/js/plugins/visualization/d3/d3.min.js"></script>
     <script src="global_assets/js/plugins/visualization/d3/d3_tooltip.js"></script>
 
-<%--    <script src="assets/js/app.js"></script>--%>
+    <%--    <script src="assets/js/app.js"></script>--%>
     <script src="global_assets/js/demo_pages/widgets_stats.js"></script>
     <!-- /theme JS files -->
     <!-- Theme JS files -->
     <script src="global_assets/js/plugins/visualization/echarts/echarts.min.js"></script>
 
-<%--    <script src="assets/js/app.js"></script>--%>
+    <%--    <script src="assets/js/app.js"></script>--%>
     <script src="global_assets/js/demo_pages/charts/echarts/bars_tornados.js"></script>
     <!-- /theme JS files -->
     <!-- Theme JS files -->
     <script src="global_assets/js/plugins/visualization/echarts/echarts.min.js"></script>
 
-<%--    <script src="assets/js/app.js"></script>--%>
+    <%--    <script src="assets/js/app.js"></script>--%>
     <script src="global_assets/js/demo_pages/charts/echarts/pies_donuts.js"></script>
     <!-- /theme JS files -->
     <!-- Theme JS files -->
     <script src="global_assets/js/plugins/visualization/echarts/echarts.min.js"></script>
 
-<%--    <script src="assets/js/app.js"></script>--%>
+    <%--    <script src="assets/js/app.js"></script>--%>
     <script src="global_assets/js/demo_pages/charts/echarts/columns_waterfalls.js"></script>
     <!-- /theme JS files -->
     <!-- Theme JS files -->
@@ -129,7 +129,7 @@
     <script src="global_assets/js/plugins/pickers/pickadate/legacy.js"></script>
     <script src="global_assets/js/plugins/notifications/jgrowl.min.js"></script>
 
-<%--    <script src="assets/js/app.js"></script>--%>
+    <%--    <script src="assets/js/app.js"></script>--%>
     <script src="global_assets/js/demo_pages/picker_date.js"></script>
     <!-- /theme JS files -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
@@ -2512,7 +2512,6 @@
 
 
 </script>
-
 
 
 <script type="text/javascript">

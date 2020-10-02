@@ -33,7 +33,7 @@ public class ProfileSubscriberController {
 	}
 	//For Sign Up
 	//validate mobileno
-	@PostMapping("/subscribersvalidate")
+		@PostMapping("/subscribersvalidate")
 	public String validateMobileNo(@RequestBody ProfileSubscriber ps) {
 		
 		return profileSubscriberService.getDetails(ps);
