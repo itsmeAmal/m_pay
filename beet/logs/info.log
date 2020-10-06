@@ -1,0 +1,170 @@
+2020-10-04 15:04:53,524 INFO c.m.b.BeetApplication [restartedMain] Starting BeetApplication on Sachith-PC- with PID 14976 (D:\IdeaProjects_2020\beet\target\classes started by Sachith in D:\IdeaProjects_2020\beet)
+2020-10-04 15:04:53,548 INFO c.m.b.BeetApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-10-04 15:04:56,174 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-10-04 15:04:56,335 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 149ms. Found 12 repository interfaces.
+2020-10-04 15:04:56,838 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-10-04 15:04:57,370 INFO o.a.c.h.Http11NioProtocol [restartedMain] Initializing ProtocolHandler ["http-nio-8092"]
+2020-10-04 15:04:57,371 INFO o.a.c.c.StandardService [restartedMain] Starting service [Tomcat]
+2020-10-04 15:04:57,373 INFO o.a.c.c.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-10-04 15:04:57,519 INFO o.a.c.c.C.[.[.[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-10-04 15:04:57,519 INFO o.s.w.c.ContextLoader [restartedMain] Root WebApplicationContext: initialization completed in 3892 ms
+2020-10-04 15:04:57,879 INFO o.h.j.i.u.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-04 15:04:58,014 INFO o.h.Version [restartedMain] HHH000412: Hibernate Core {5.4.8.Final}
+2020-10-04 15:04:58,337 INFO o.h.a.c.Version [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-04 15:04:58,537 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2020-10-04 15:04:58,541 WARN c.z.h.u.DriverDataSource [restartedMain] Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-10-04 15:05:02,660 ERROR c.z.h.p.HikariPool [restartedMain] HikariPool-1 - Exception during pool initialization.
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:836) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:456) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:199) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:138) ~[HikariCP-3.4.1.jar:?]
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:353) ~[HikariCP-3.4.1.jar:?]
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:201) ~[HikariCP-3.4.1.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:473) ~[HikariCP-3.4.1.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:562) ~[HikariCP-3.4.1.jar:?]
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115) ~[HikariCP-3.4.1.jar:?]
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112) ~[HikariCP-3.4.1.jar:?]
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:122) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:180) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:68) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:152) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:175) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:118) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1214) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1245) ~[hibernate-core-5.4.8.Final.jar:5.4.8.Final]
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:58) ~[spring-orm-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:365) ~[spring-orm-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:391) ~[spring-orm-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:378) ~[spring-orm-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:341) ~[spring-orm-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1862) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1799) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:595) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:517) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:323) ~[spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222) [spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:321) [spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) [spring-beans-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1108) [spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:868) [spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:550) [spring-context-5.2.1.RELEASE.jar:5.2.1.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) [spring-boot-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:747) [spring-boot-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) [spring-boot-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) [spring-boot-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) [spring-boot-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+	at com.mobios.beet.BeetApplication.main(BeetApplication.java:10) [classes/:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_73]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_73]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_73]
+	at java.lang.reflect.Method.invoke(Method.java:497) ~[?:1.8.0_73]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) [spring-boot-devtools-2.2.1.RELEASE.jar:2.2.1.RELEASE]
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_73]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_73]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_73]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:422) ~[?:1.8.0_73]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:91) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:144) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	... 54 more
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method) ~[?:1.8.0_73]
+	at java.net.DualStackPlainSocketImpl.socketConnect(DualStackPlainSocketImpl.java:85) ~[?:1.8.0_73]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[?:1.8.0_73]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[?:1.8.0_73]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[?:1.8.0_73]
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:172) ~[?:1.8.0_73]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[?:1.8.0_73]
+	at java.net.Socket.connect(Socket.java:589) ~[?:1.8.0_73]
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:155) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:65) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:144) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:956) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:826) ~[mysql-connector-java-8.0.18.jar:8.0.18]
+	... 54 more
+2020-10-04 15:05:02,681 WARN o.h.e.j.e.i.JdbcEnvironmentInitiator [restartedMain] HHH000342: Could not obtain connection to query metadata : Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2020-10-04 15:05:02,697 INFO o.a.c.c.StandardService [restartedMain] Stopping service [Tomcat]
+2020-10-04 15:06:14,444 INFO c.m.b.BeetApplication [restartedMain] Starting BeetApplication on Sachith-PC- with PID 8164 (D:\IdeaProjects_2020\beet\target\classes started by Sachith in D:\IdeaProjects_2020\beet)
+2020-10-04 15:06:14,456 INFO c.m.b.BeetApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-10-04 15:06:15,483 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-10-04 15:06:15,619 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 128ms. Found 12 repository interfaces.
+2020-10-04 15:06:15,988 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-10-04 15:06:16,490 INFO o.a.c.h.Http11NioProtocol [restartedMain] Initializing ProtocolHandler ["http-nio-8092"]
+2020-10-04 15:06:16,491 INFO o.a.c.c.StandardService [restartedMain] Starting service [Tomcat]
+2020-10-04 15:06:16,491 INFO o.a.c.c.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-10-04 15:06:16,626 INFO o.a.c.c.C.[.[.[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-10-04 15:06:16,626 INFO o.s.w.c.ContextLoader [restartedMain] Root WebApplicationContext: initialization completed in 2096 ms
+2020-10-04 15:06:16,917 INFO o.h.j.i.u.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-04 15:06:16,982 INFO o.h.Version [restartedMain] HHH000412: Hibernate Core {5.4.8.Final}
+2020-10-04 15:06:17,130 INFO o.h.a.c.Version [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-04 15:06:17,242 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2020-10-04 15:06:17,244 WARN c.z.h.u.DriverDataSource [restartedMain] Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-10-04 15:06:17,494 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2020-10-04 15:06:17,575 INFO o.h.d.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2020-10-04 15:06:21,100 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-10-04 15:06:21,365 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-10-04 15:06:23,268 INFO o.s.s.c.ThreadPoolTaskExecutor [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-04 15:06:23,868 INFO o.a.c.h.Http11NioProtocol [restartedMain] Starting ProtocolHandler ["http-nio-8092"]
+2020-10-04 15:06:23,897 INFO c.m.b.BeetApplication [restartedMain] Started BeetApplication in 9.917 seconds (JVM running for 12.902)
+2020-10-04 15:09:24,783 INFO o.a.c.c.C.[.[.[/] [http-nio-8092-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-10-04 15:09:24,784 INFO o.s.w.s.DispatcherServlet [http-nio-8092-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-10-04 15:09:24,823 INFO o.s.w.s.DispatcherServlet [http-nio-8092-exec-1] Completed initialization in 39 ms
+2020-10-04 15:09:25,000 INFO c.m.b.s.TransactionServiceImpl [http-nio-8092-exec-1] Transaction type: 2 ----- acc no: 1000000588606754,1000000522214053------ description: Mobile Top Up
+2020-10-04 15:09:25,680 WARN o.h.e.j.s.SqlExceptionHelper [http-nio-8092-exec-1] SQL Error: 1452, SQLState: 23000
+2020-10-04 15:09:25,681 ERROR o.h.e.j.s.SqlExceptionHelper [http-nio-8092-exec-1] Cannot add or update a child row: a foreign key constraint fails (`digital_wallet_`.`comission`, CONSTRAINT `fk_commission_profile1` FOREIGN KEY (`profile_acc_no`) REFERENCES `profile_distribution_network` (`acc_no`))
+2020-10-04 15:11:45,759 INFO c.m.b.s.TransactionServiceImpl [http-nio-8092-exec-4] Transaction type: 2 ----- acc no: 1000000588606754,1000000522214053------ description: Mobile Top Up
+2020-10-04 15:11:45,914 WARN o.h.e.j.s.SqlExceptionHelper [http-nio-8092-exec-4] SQL Error: 1452, SQLState: 23000
+2020-10-04 15:11:45,914 ERROR o.h.e.j.s.SqlExceptionHelper [http-nio-8092-exec-4] Cannot add or update a child row: a foreign key constraint fails (`digital_wallet_`.`comission`, CONSTRAINT `fk_commission_profile1` FOREIGN KEY (`profile_acc_no`) REFERENCES `profile_distribution_network` (`acc_no`))
+2020-10-04 15:52:24,895 INFO c.m.b.BeetApplication [restartedMain] Starting BeetApplication on Sachith-PC- with PID 13152 (D:\IdeaProjects_2020\beet\target\classes started by Sachith in D:\IdeaProjects_2020\beet)
+2020-10-04 15:52:24,906 INFO c.m.b.BeetApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-10-04 15:52:25,843 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-10-04 15:52:25,981 INFO o.s.d.r.c.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 127ms. Found 12 repository interfaces.
+2020-10-04 15:52:26,356 INFO o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [restartedMain] Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-10-04 15:52:26,834 INFO o.a.c.h.Http11NioProtocol [restartedMain] Initializing ProtocolHandler ["http-nio-8092"]
+2020-10-04 15:52:26,835 INFO o.a.c.c.StandardService [restartedMain] Starting service [Tomcat]
+2020-10-04 15:52:26,836 INFO o.a.c.c.StandardEngine [restartedMain] Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-10-04 15:52:26,962 INFO o.a.c.c.C.[.[.[/] [restartedMain] Initializing Spring embedded WebApplicationContext
+2020-10-04 15:52:26,963 INFO o.s.w.c.ContextLoader [restartedMain] Root WebApplicationContext: initialization completed in 2004 ms
+2020-10-04 15:52:27,225 INFO o.h.j.i.u.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-10-04 15:52:27,289 INFO o.h.Version [restartedMain] HHH000412: Hibernate Core {5.4.8.Final}
+2020-10-04 15:52:27,413 INFO o.h.a.c.Version [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-10-04 15:52:27,510 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2020-10-04 15:52:27,512 WARN c.z.h.u.DriverDataSource [restartedMain] Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-10-04 15:52:27,638 INFO c.z.h.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2020-10-04 15:52:27,656 INFO o.h.d.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect
+2020-10-04 15:52:28,810 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-10-04 15:52:28,951 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-10-04 15:52:31,025 INFO o.s.s.c.ThreadPoolTaskExecutor [restartedMain] Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-04 15:52:31,606 INFO o.a.c.h.Http11NioProtocol [restartedMain] Starting ProtocolHandler ["http-nio-8092"]
+2020-10-04 15:52:31,638 INFO c.m.b.BeetApplication [restartedMain] Started BeetApplication in 7.181 seconds (JVM running for 10.184)
+2020-10-04 15:52:47,979 INFO o.a.c.c.C.[.[.[/] [http-nio-8092-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-10-04 15:52:47,980 INFO o.s.w.s.DispatcherServlet [http-nio-8092-exec-1] Initializing Servlet 'dispatcherServlet'
+2020-10-04 15:52:48,030 INFO o.s.w.s.DispatcherServlet [http-nio-8092-exec-1] Completed initialization in 50 ms
+2020-10-04 15:52:48,208 INFO c.m.b.s.TransactionServiceImpl [http-nio-8092-exec-1] Transaction type: 2 ----- acc no: 1000000588606754,1000000522214053------ description: Mobile Top Up
+2020-10-04 15:52:48,773 WARN o.h.e.j.s.SqlExceptionHelper [http-nio-8092-exec-1] SQL Error: 1452, SQLState: 23000
+2020-10-04 15:52:48,774 ERROR o.h.e.j.s.SqlExceptionHelper [http-nio-8092-exec-1] Cannot add or update a child row: a foreign key constraint fails (`digital_wallet_`.`comission`, CONSTRAINT `fk_commission_profile1` FOREIGN KEY (`profile_acc_no`) REFERENCES `profile_distribution_network` (`acc_no`))

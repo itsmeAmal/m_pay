@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="Beet_Frontend:war">
-    <output-path>$PROJECT_DIR$/out/artifacts/Beet_Frontend_war</output-path>
-    <root id="archive" name="Beet_Frontend_war.war">
-      <element id="artifact" artifact-name="Beet_Frontend:war exploded" />
-    </root>
-  </artifact>
-</component>
