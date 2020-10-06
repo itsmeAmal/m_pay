@@ -6,4 +6,4 @@ import com.mpaylogger.mpaylogger.model.Log;
 
 public interface LogRepositories extends JpaRepository<Log, Integer>{
 
-}
+} 
