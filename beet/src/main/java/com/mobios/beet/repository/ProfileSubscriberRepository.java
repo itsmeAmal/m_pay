@@ -19,6 +19,8 @@ public interface ProfileSubscriberRepository extends JpaRepository<ProfileSubscr
 
 	//get user by pan
 	ProfileSubscriber getPanDetails(String panNo);
+
+
 	
 	@Query(value="{call createAccountNumber(:profiletypeid)}",nativeQuery = true)
 	String createAccountNumber(@Param("profiletypeid") String profieltypeid);

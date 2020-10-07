@@ -57,14 +57,14 @@ public class ProfileSubscriberServiceImpl implements ProfileSubscriberService {
 			//get user detailsS
 			
 			ProfileSubscriber ps =  profileSubscriberRepository.getDetails(mobileNo);
+
 			
 			OTPSender otpSender = new OTPSender();
 			otp= otpSender.generateOtp()+"";
 			
 			String message = "Your Beet registration OTP is "+otp+"." ;
 			
-			System.out.println("work "+message);
-		
+
 			//Boolean isOTPsend = otpSender.sendHtmlEmail(userName, password, "sahani@mobios.lk", "OTP verifcation for BEET", message, "");
 			int resCOde = sms.sendSMS(mobileNo , message);
 			System.out.println("workthe message 200");
