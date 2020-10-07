@@ -1,52 +1,48 @@
-package com.mpaylogger.mpaylogger.model;
+package com.mpay.logger.model;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
-import javax.persistence.Id;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EntityListeners;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity 
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+@Entity
 @Table(name="logs")
-public class Log 
-{
+@EntityListeners(AuditingEntityListener.class)
+public class Logger {
+	
 	@Id
-	@Column(name="id", unique = true, nullable = false)
+	@Column(name="id")
 	private int Id;
 	
 	@Column(name="from_user_type")
 	private int FromUserType;
 	
 	@Column(name="from_user_acc_no")
-	private String FromUserAccount;
+	private String FromUserAccountNo;
 	
 	@Column(name="to_user_type")
 	private int ToUserType;
 	
 	@Column(name="to_user_acc_no")
-	private String ToUserAccount;
+	private String ToUserAccountNo;
 	
-	@Column(name="date_time")
+	@Column(name="date_time") 
 	private Timestamp DateTime;
 	
 	@Column(name="transaction_amount")
-	private BigDecimal Amount;
+	private BigDecimal TransactionAmount; 
 	
 	@Column(name="transaction_type")
 	private int TransactionType;
 	
 	@Column(name="success_status")
 	private String SuccessStatus;
-	
-	@Override
-	public String toString() 
-	{
-		return "Log [Id=" + Id + ", FromUserType=" + FromUserType + ", FromUserAccount=" + FromUserAccount
-				+ ", ToUserType=" + ToUserType + ", ToUserAccount=" + ToUserAccount + ", DateTime=" + DateTime
-				+ ", Amount=" + Amount + ", TransactionType=" + TransactionType + ", SuccessStatus=" + SuccessStatus
-				+ "]";
-	}
 	
 	public int getId() {
 		return Id;
@@ -64,12 +60,12 @@ public class Log
 		FromUserType = fromUserType;
 	}
 	
-	public String getFromUserAccount() {
-		return FromUserAccount;
+	public String getFromUserAccountNo() {
+		return FromUserAccountNo;
 	}
 	
-	public void setFromUserAccount(String fromUserAccount) {
-		FromUserAccount = fromUserAccount;
+	public void setFromUserAccountNo(String fromUserAccountNo) {
+		FromUserAccountNo = fromUserAccountNo;
 	}
 	
 	public int getToUserType() {
@@ -80,12 +76,12 @@ public class Log
 		ToUserType = toUserType;
 	}
 	
-	public String getToUserAccount() {
-		return ToUserAccount;
+	public String getToUserAccountNo() {
+		return ToUserAccountNo;
 	}
 	
-	public void setToUserAccount(String toUserAccount) {
-		ToUserAccount = toUserAccount;
+	public void setToUserAccountNo(String toUserAccountNo) {
+		ToUserAccountNo = toUserAccountNo;
 	}
 	
 	public Timestamp getDateTime() {
@@ -96,17 +92,18 @@ public class Log
 		DateTime = dateTime;
 	}
 	
-	public BigDecimal getAmount() {
-		return Amount;
+	public BigDecimal getTransactionAmount() {
+		return TransactionAmount;
 	}
 	
-	public void setAmount(BigDecimal amount) {
-		Amount = amount;
+	public void setTransactionAmount(BigDecimal transactionAmount) {
+		TransactionAmount = transactionAmount;
 	}
 	
 	public int getTransactionType() {
 		return TransactionType;
 	}
+	
 	public void setTransactionType(int transactionType) {
 		TransactionType = transactionType;
 	}

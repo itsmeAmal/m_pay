@@ -1,14 +1,14 @@
-package com.mpaylogger.mpaylogger;
+package com.mpay.logger;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MpayloggerApplication {
+public class DemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MpayloggerApplication.class, args);
-		System.out.println("ok running.....");
+		SpringApplication.run(DemoApplication.class, args);
+		System.out.println("test.....ok");
 	}
 
 }

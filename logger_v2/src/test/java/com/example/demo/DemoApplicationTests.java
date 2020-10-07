@@ -1,10 +1,10 @@
-package com.mpaylogger.mpaylogger;
+package com.example.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MpayloggerApplicationTests {
+class DemoApplicationTests {
 
 	@Test
 	void contextLoads() {
