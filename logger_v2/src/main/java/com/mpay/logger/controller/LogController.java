@@ -35,6 +35,8 @@ public class LogController {
 	return LogService.AddLogger(FromUserType, FromUserAccNo, ToUserType, ToUserAccNo, Amount, TransactionType, SuccessStatus);	
 	}
 	
+
+	
 	@GetMapping("/GetAll")
 	public List<Logger> GetAllLogs(){
 		return LogService.GetAllLogs();		

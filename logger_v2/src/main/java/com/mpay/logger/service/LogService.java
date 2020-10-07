@@ -17,6 +17,7 @@ public class LogService {
 	
 	public Logger AddLogger(int FromUserType, String FromUserAccNo, int ToUserType, String ToUserAccNo, 
 			BigDecimal Amount, int TransactionType, String SuccessStatus) {
+		
 		Logger Log = new Logger();
 		Log.setFromUserAccountNo(FromUserAccNo); 
 		Log.setFromUserType(FromUserType); 
