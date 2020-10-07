@@ -17,7 +17,7 @@ public interface ProfileSubscriberRepository extends JpaRepository<ProfileSubscr
 	//for registration
 	ProfileSubscriber getDetails(String mobileNo);
 
-	//get user by pan
+	//get user by pannumber
 	ProfileSubscriber getPanDetails(String panNo);
 
 
