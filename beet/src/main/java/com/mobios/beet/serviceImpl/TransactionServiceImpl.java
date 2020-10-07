@@ -1,7 +1,9 @@
 package com.mobios.beet.serviceImpl;
 
 import com.mobios.beet.model.*;
+import com.mobios.beet.repository.ProfileSubscriberRepository;
 import com.mobios.beet.repository.TransactionRepository;
+import com.mobios.beet.repository.WalletRepository;
 import com.mobios.beet.service.TransactionService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -18,6 +20,9 @@ public class TransactionServiceImpl implements TransactionService {
 
     @Autowired
     TransactionRepository transactionRepositoy;
+
+    @Autowired
+    WalletRepository walletRepository;
 
     private static final Logger logger = LogManager.getLogger(TransactionServiceImpl.class);
 
@@ -228,6 +233,10 @@ public class TransactionServiceImpl implements TransactionService {
 
                     TransactionAll debitTransaction = new TransactionAll();
 
+//                    Wallet debitWallet = walletRepository.findById(debitAccno);
+//
+//                    System.out.println("debitWallet: "+debitWallet.getAccNo());
+
                     debitTransaction.settId(transaction.gettId());
                     debitTransaction.setUserAccNo(debitAccno);
                     debitTransaction.setAmount(transaction.getAmount());
@@ -240,6 +249,8 @@ public class TransactionServiceImpl implements TransactionService {
                     transactionRepositoy.save(debitTransaction);
 
                     String resultFromUpdateDebitWallet = transactionRepositoy.updateWallet(debitTransaction.getUserAccNo(), debitTransaction.getAmount(), debitTransaction.getEntry());
+                    System.out.println(debitTransaction.getUserAccNo()+"," +debitTransaction.getAmount() +", " +debitTransaction.getEntry());
+                    System.out.println("resultFromUpdateDebitWallet: "+resultFromUpdateDebitWallet);
 
                     if (resultFromUpdateDebitWallet.equals("1")) {
                         transactionRepositoy.updateTransStatus("success", tid, debitTransaction.getEntry());
@@ -352,7 +363,7 @@ public class TransactionServiceImpl implements TransactionService {
 
                             commission.setCommissionAmount(Double.parseDouble(transactionsSuccess.getAmount()) * commissionRate);
                             System.out.println("fees amt: "+fees.getFeesAmount());
-                            commission.setProfileAccNo(transactionsSuccess.getAccountTo());
+                            commission.setProfileAccNo("1000001131249837");
                             System.out.println("getAccountTo: "+transactionsSuccess.getAccountTo());
                             transactionRepositoy.save(commission);
 

@@ -80,7 +80,6 @@ public class ProfileSubscriber {
 	private String sPanNo;
 	
 	@Id
-
 	@Column(name = "s_mobile_number")
 	private String sMobileNumber;
 
