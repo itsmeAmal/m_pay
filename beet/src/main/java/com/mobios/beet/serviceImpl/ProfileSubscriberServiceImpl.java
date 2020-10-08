@@ -2,20 +2,23 @@ package com.mobios.beet.serviceImpl;
 
 import com.mobios.beet.authentication.OTPSender;
 import com.mobios.beet.authentication.SMSSend;
+import com.mobios.beet.dto.LoggerDTO;
 import com.mobios.beet.errorHandler.ShowError;
 import com.mobios.beet.model.ProfileSubscriber;
 import com.mobios.beet.repository.ProfileSubscriberRepository;
 import com.mobios.beet.repository.WalletRepository;
 import com.mobios.beet.service.ProfileSubscriberService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.awt.image.BufferedImage;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.math.BigDecimal;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -24,10 +27,9 @@ public class ProfileSubscriberServiceImpl implements ProfileSubscriberService {
 	
 	@Autowired
     ProfileSubscriberRepository profileSubscriberRepository;
+
 	@Autowired
 	WalletRepository walletRepository;
-	
-	
 
 	@Override
 	public List<ProfileSubscriber> findAll() {
@@ -270,7 +272,7 @@ public class ProfileSubscriberServiceImpl implements ProfileSubscriberService {
 	public ProfileSubscriber saveUserWithProfileImage(ProfileSubscriber ps) {
 	
 		String returnstr ="";
-		
+
 		String accno = profileSubscriberRepository.createAccountNumber("5");//profile code 5 - subscriber
 		OTPSender otp = new OTPSender();
 		String pin = otp.generate4DigitPIN()+"";

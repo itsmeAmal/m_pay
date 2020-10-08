@@ -1,5 +1,7 @@
 package com.mobios.beet.serviceImpl;
 
+import com.mobios.beet.common.AppConstants;
+import com.mobios.beet.dto.LoggerDTO;
 import com.mobios.beet.model.*;
 import com.mobios.beet.repository.ProfileSubscriberRepository;
 import com.mobios.beet.repository.TransactionRepository;
@@ -8,9 +10,16 @@ import com.mobios.beet.service.TransactionService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
+import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -24,7 +33,12 @@ public class TransactionServiceImpl implements TransactionService {
     @Autowired
     WalletRepository walletRepository;
 
-    private static final Logger logger = LogManager.getLogger(TransactionServiceImpl.class);
+    @Autowired
+    RestTemplate restTemplate;
+
+//    private static final String loggerURL = "http://localhost:8080/log/insertlog";
+
+//    private static final Logger logger = LogManager.getLogger(TransactionServiceImpl.class);
 
     //get all transactions from 'transactions' table
     @Override
@@ -104,7 +118,9 @@ public class TransactionServiceImpl implements TransactionService {
     public String SaveTransaction(TransactionAll transaction) {
         // TODO Auto-generated method stub
 
-        logger.info("Transaction type: " + transaction.getTransactionTypesId() + " ----- acc no: " + transaction.getUserAccNo() + "------ description: " + transaction.getDescription());
+        HttpHeaders headers = new HttpHeaders();
+        headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+        LoggerDTO loggerDTO = null;
 
         //call the create_trans_id
         String tid = transactionRepositoy.createTransactionId();
@@ -117,6 +133,18 @@ public class TransactionServiceImpl implements TransactionService {
         String accnoArr[] = accnos.split(",");
         //get the o index acc no
         transaction.setUserAccNo(accnoArr[0]);
+
+        BigDecimal bd1 = new BigDecimal(transaction.getAmount());
+
+        loggerDTO = new LoggerDTO(Integer.parseInt(transaction.getTransactionTypesId()), accnoArr[0], 4, accnoArr[1], bd1, 4, transaction.getStatus());
+
+        HttpEntity<LoggerDTO> entity = new HttpEntity<LoggerDTO>(loggerDTO,headers);
+
+        String body = restTemplate.exchange(
+                AppConstants.LoggerUrl, HttpMethod.POST, entity, String.class).getBody();
+
+        System.out.println(body);
+
 
         transactionRepositoy.save(transaction);
 
