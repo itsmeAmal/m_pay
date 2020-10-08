@@ -3,16 +3,16 @@ package com.mpay.logger.controller;
 import java.math.BigDecimal;
 import java.util.List;
 
+import com.mpay.logger.dto.LoggerDTO;
+import com.mpay.logger.response.ResponseMessage;
+import com.mpay.logger.service.LogService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.mpay.logger.model.Logger;
-import com.mpay.logger.service.LogService;
+import com.mpay.logger.service.impl.LogServiceImpl;
+
+import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/log")
@@ -20,7 +20,7 @@ import com.mpay.logger.service.LogService;
 public class LogController {
 	
 	@Autowired
-	private LogService LogService;
+	private LogService logService;
 	 
 	@PostMapping("/AddLog/{FromUserType}/{FromUserAccNo}/{ToUserType}/{ToUserAccNo}/{Amount}/{TransactionType}/{SuccessStatus}") 
 	public Logger AddLogRecord(
@@ -32,13 +32,20 @@ public class LogController {
 			@PathVariable(value = "TransactionType") int TransactionType, 
 			@PathVariable(value = "SuccessStatus") String SuccessStatus
 			) {		
-	return LogService.AddLogger(FromUserType, FromUserAccNo, ToUserType, ToUserAccNo, Amount, TransactionType, SuccessStatus);	
+	return logService.AddLogger(FromUserType, FromUserAccNo, ToUserType, ToUserAccNo, Amount, TransactionType, SuccessStatus);
+	}
+
+	@PostMapping("/insertlog")
+	private ResponseMessage insertLogs(@Valid @RequestBody LoggerDTO loggerDTO)
+	{
+		System.out.println(loggerDTO.toString());
+		return logService.InsertLogger(loggerDTO);
 	}
 	
 
 	
 	@GetMapping("/GetAll")
 	public List<Logger> GetAllLogs(){
-		return LogService.GetAllLogs();		
+		return logService.GetAllLogs();
 	}
 }

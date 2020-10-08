@@ -3,11 +3,7 @@ package com.mpay.logger.model;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EntityListeners;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
@@ -17,105 +13,117 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 public class Logger {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
-	private int Id;
+	private int id;
 	
 	@Column(name="from_user_type")
-	private int FromUserType;
+	private int fromUserType;
 	
 	@Column(name="from_user_acc_no")
-	private String FromUserAccountNo;
+	private String fromUserAccountNo;
 	
 	@Column(name="to_user_type")
-	private int ToUserType;
+	private int toUserType;
 	
 	@Column(name="to_user_acc_no")
-	private String ToUserAccountNo;
+	private String toUserAccountNo;
 	
 	@Column(name="date_time") 
-	private Timestamp DateTime;
+	private Timestamp dateTime;
 	
 	@Column(name="transaction_amount")
-	private BigDecimal TransactionAmount; 
+	private BigDecimal transactionAmount;
 	
 	@Column(name="transaction_type")
-	private int TransactionType;
+	private int transactionType;
 	
 	@Column(name="success_status")
-	private String SuccessStatus;
-	
+	private String successStatus;
+
+	public Logger() {
+	}
+
+	public Logger(int fromUserType, String fromUserAccountNo, int toUserType, String toUserAccountNo, BigDecimal transactionAmount, int transactionType, String successStatus)
+	{
+		this.fromUserType = fromUserType;
+		this.fromUserAccountNo = fromUserAccountNo;
+		this.toUserType = toUserType;
+		this.toUserAccountNo = toUserAccountNo;
+		this.transactionAmount = transactionAmount;
+		this.transactionType = transactionType;
+		this.successStatus = successStatus;
+	}
+
 	public int getId() {
-		return Id;
+		return id;
 	}
-	
+
 	public void setId(int id) {
-		Id = id;
+		this.id = id;
 	}
-	
+
 	public int getFromUserType() {
-		return FromUserType;
+		return fromUserType;
 	}
-	
+
 	public void setFromUserType(int fromUserType) {
-		FromUserType = fromUserType;
+		this.fromUserType = fromUserType;
 	}
-	
+
 	public String getFromUserAccountNo() {
-		return FromUserAccountNo;
+		return fromUserAccountNo;
 	}
-	
+
 	public void setFromUserAccountNo(String fromUserAccountNo) {
-		FromUserAccountNo = fromUserAccountNo;
+		this.fromUserAccountNo = fromUserAccountNo;
 	}
-	
+
 	public int getToUserType() {
-		return ToUserType;
+		return toUserType;
 	}
-	
+
 	public void setToUserType(int toUserType) {
-		ToUserType = toUserType;
+		this.toUserType = toUserType;
 	}
-	
+
 	public String getToUserAccountNo() {
-		return ToUserAccountNo;
+		return toUserAccountNo;
 	}
-	
+
 	public void setToUserAccountNo(String toUserAccountNo) {
-		ToUserAccountNo = toUserAccountNo;
+		this.toUserAccountNo = toUserAccountNo;
 	}
-	
+
 	public Timestamp getDateTime() {
-		return DateTime;
+		return dateTime;
 	}
-	
+
 	public void setDateTime(Timestamp dateTime) {
-		DateTime = dateTime;
+		this.dateTime = dateTime;
 	}
-	
+
 	public BigDecimal getTransactionAmount() {
-		return TransactionAmount;
+		return transactionAmount;
 	}
-	
+
 	public void setTransactionAmount(BigDecimal transactionAmount) {
-		TransactionAmount = transactionAmount;
+		this.transactionAmount = transactionAmount;
 	}
-	
+
 	public int getTransactionType() {
-		return TransactionType;
+		return transactionType;
 	}
-	
+
 	public void setTransactionType(int transactionType) {
-		TransactionType = transactionType;
+		this.transactionType = transactionType;
 	}
-	
+
 	public String getSuccessStatus() {
-		return SuccessStatus;
+		return successStatus;
 	}
-	
+
 	public void setSuccessStatus(String successStatus) {
-		SuccessStatus = successStatus;
+		this.successStatus = successStatus;
 	}
-	
-	
-	
 }
