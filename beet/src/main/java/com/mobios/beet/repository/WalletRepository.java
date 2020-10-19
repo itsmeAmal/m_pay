@@ -9,6 +9,7 @@ import java.util.List;
 public interface WalletRepository extends JpaRepository<Wallet, Integer> {
 
 	List<Wallet> findByAccNo(String accno);
+	
 	String getWalletId(String accno);
 
 	Wallet findById(String walletId);

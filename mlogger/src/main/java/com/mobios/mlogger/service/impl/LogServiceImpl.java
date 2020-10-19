@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.sql.Date;
 import java.util.List;
 
 @Service
@@ -18,8 +19,8 @@ public class LogServiceImpl implements LogService {
     private LogRepository logRepository;
 
     public Logger AddLogger(int FromUserType, String FromUserAccNo, int ToUserType, String ToUserAccNo,
-                            BigDecimal Amount, int TransactionType, String SuccessStatus) {
-
+                            BigDecimal Amount, int TransactionType, String SuccessStatus) 
+    {
         Logger Log = new Logger();
         Log.setFromUserAccountNo(FromUserAccNo);
         Log.setFromUserType(FromUserType);
@@ -37,8 +38,8 @@ public class LogServiceImpl implements LogService {
     }
 
     @Override
-    public ResponseMessage InsertLogger(LoggerDTO loggerDTO) {
-
+    public ResponseMessage InsertLogger(LoggerDTO loggerDTO) 
+    { 
         Logger logger = null;
         ResponseMessage responseMessage = null;
 
@@ -50,10 +51,15 @@ public class LogServiceImpl implements LogService {
             responseMessage = new ResponseMessage("200", "successfully save");
         }
         else
-        {
+        {  
             responseMessage = new ResponseMessage("500", "error");
         }
         return responseMessage;
-
     }
+
+	@Override
+	public List<Logger> GetLogsByDateRange(Date Fromdate, Date ToDate) {
+		return logRepository.FindByDateRange(Fromdate, ToDate);
+		
+	}
 }

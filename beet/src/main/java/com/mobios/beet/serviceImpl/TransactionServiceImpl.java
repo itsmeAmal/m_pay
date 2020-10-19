@@ -52,7 +52,6 @@ public class TransactionServiceImpl implements TransactionService {
     @Override
     public List<TransactionAll> findTransactionByUserAccno(String userAccNo) {
         List<TransactionAll> TransByAccno = transactionRepositoy.findByUserAccNo(userAccNo);
-
         return TransByAccno;
     }
 
@@ -60,7 +59,6 @@ public class TransactionServiceImpl implements TransactionService {
     @Override
     public List<TransactionAll> findTransactionsByDates(String date1, String date2) {
         List<TransactionAll> TransByDates = transactionRepositoy.findByDateBetween(date1, date2);
-
         return TransByDates;
     }
 
@@ -68,7 +66,6 @@ public class TransactionServiceImpl implements TransactionService {
     @Override
     public List<TransactionAll> findTransByDatesAndUserAccNo(String date1, String date2, String userAccNo) {
         List<TransactionAll> TransByDatesAndAccno = transactionRepositoy.findByDateBetweenAndUserAccNo(date1, date2, userAccNo);
-
         return TransByDatesAndAccno;
     }
 
@@ -80,7 +77,6 @@ public class TransactionServiceImpl implements TransactionService {
         TransactionAll tran = TransByTransId.get(0);
         String userAccno = TransByTransId.get(0).getUserAccNo() + "," + TransByTransId.get(1).getUserAccNo();
         tran.setUserAccNo(userAccno);
-        System.out.println("transaction list by tid");
         return tran;
     }
 
@@ -116,7 +112,6 @@ public class TransactionServiceImpl implements TransactionService {
 
     @Override
     public String SaveTransaction(TransactionAll transaction) {
-        // TODO Auto-generated method stub
 
         HttpHeaders headers = new HttpHeaders();
         headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
@@ -143,33 +138,24 @@ public class TransactionServiceImpl implements TransactionService {
         String body = restTemplate.exchange(
                 AppConstants.LoggerUrl, HttpMethod.POST, entity, String.class).getBody();
 
-        System.out.println(body);
-
-
         transactionRepositoy.save(transaction);
-
 
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
         Date date = new Date();
 
         String transactionDate = formatter.format(date);
 
-
         transactionDate = transactionDate.substring(0, 10);
-        System.out.println("transactionDate: "+transactionDate);
         String date1 = transactionDate.concat(" 00:00:00");
         String date2 = transactionDate.concat(" 23:59:59");
-        System.out.println(date1 + "  =========== " + date2);
 
         String transactionDate2 = transactionDate.substring(0, 8);
         String date3 = transactionDate2.concat("01 00:00:00");
         String date4 = transactionDate2.concat("31 23:59:59");
-        System.out.println(date3 + " =/=/=/=/=/=/ " + date4);
 
         boolean valid = true;
         String finalTransStaus = "";
         try {
-
             //checking wallet balance rules
             String resultFromWallet = transactionRepositoy.checkWalletBalance(transaction.getUserAccNo(), Double.parseDouble(transaction.getAmount()));
             //wallet balance > 500

@@ -19,7 +19,6 @@ public class DetailsSuccessServiceImpl implements DetailsSuccessService {
 		date1 = date1.replace("_", " ");
 		date2 = date2.replace("_", " ");
 		List<TransactionsSuccess> TransByDates = detailsRepository.findByDateBetween(date1, date2);
-		System.out.println(TransByDates.size());
 		return TransByDates;
 	}
 	

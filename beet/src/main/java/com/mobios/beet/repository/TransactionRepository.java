@@ -12,11 +12,14 @@ import org.springframework.data.repository.query.Param;
 import javax.transaction.Transactional;
 import java.util.List;
 
-public interface TransactionRepository extends JpaRepository<TransactionAll, Integer> {
+public interface TransactionRepository extends JpaRepository<TransactionAll, Integer> {	
 
 	List<TransactionAll> findByUserAccNo(String userAccNo);
+	
 	List<TransactionAll> findByDateBetween(String start, String end);
+	
 	List<TransactionAll> findByDateBetweenAndUserAccNo(String date1, String date2, String userAccNo);
+	
 	List<TransactionAll> findBytId(String tid);
 	
 	@Query(value= "{call search(:date1,:date2,:accno,:status,:transtypeid,:amountmin,:amountmax)}" , nativeQuery = true)
@@ -29,7 +32,6 @@ public interface TransactionRepository extends JpaRepository<TransactionAll, Int
 			@Param("amountmin") String amountmin,
 			@Param("amountmax") String amountmax
 			);
-	
 	
 	@Query(value="{call check_transaction_min_max(:type, :amount )}" , nativeQuery = true)
 	String checkTransactionMinMax(
@@ -70,16 +72,6 @@ public interface TransactionRepository extends JpaRepository<TransactionAll, Int
 			@Param("entry") String entry
 			);
 	
-	
-	//String updatetransactionSuccess(int id, String tranId, String amount);
-	
-	/*
-	 * @Modifying
-	 * 
-	 * @Transactional String updatetransactionInfo(String amount, String date,String
-	 * tranId , String transactionType);
-	 */
-	
 	//to update transactions in transaction succes table
 	@Modifying
 	@Transactional
@@ -103,9 +95,8 @@ public interface TransactionRepository extends JpaRepository<TransactionAll, Int
 	String checkCommissionRules(@Param("transtypeid") int transtypeid, @Param("usertypeid") double usertypeid);
 	
 	//save in commission table
-		@Modifying
-		@Transactional
-		void save(Commission commission);
-	
-	
+	@Modifying
+	@Transactional
+	void save(Commission commission);
+		
 }

@@ -20,8 +20,7 @@ public class CommissionRulesController {
 	@GetMapping("/getCommissionsrules/{transactionTypeId}")
 	public List<CommissionRules> getCommissionRatesByTransTypeId(@PathVariable(value = "transactionTypeId") int transactionTypeId) {
 		List<CommissionRules> CommissionRatesByTransTypeId = commissionRulesService.findBytransactionTypeId(transactionTypeId);
-		return CommissionRatesByTransTypeId;
-		
+		return CommissionRatesByTransTypeId;		
 	}		
 	
 	//update commission rules for each trans type id and user type id
@@ -32,11 +31,10 @@ public class CommissionRulesController {
 	}
 	
 	//update the original commission rules after the system 
-		@PutMapping("/commissionupdateOriginal/{usertypeid}/{transtypeid}")
-		public String updateCommissionInfo(@RequestBody CommissionRules commissionrules , @PathVariable(value="usertypeid") int usertypeid , @PathVariable(value="transtypeid") int transtypeid) {
-			System.out.println("-------Commission updating put function-------");
-			return commissionRulesService.updateCommissionInformation(commissionrules , usertypeid , transtypeid);
-		}
-	
-	
+	@PutMapping("/commissionupdateOriginal/{usertypeid}/{transtypeid}")
+	public String updateCommissionInfo(@RequestBody CommissionRules commissionrules , @PathVariable(value="usertypeid") int usertypeid , @PathVariable(value="transtypeid") int transtypeid) {
+	System.out.println("-------Commission updating put function-------");
+	return commissionRulesService.updateCommissionInformation(commissionrules , usertypeid , transtypeid);
+	}
+		
 }

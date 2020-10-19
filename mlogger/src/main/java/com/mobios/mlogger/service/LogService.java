@@ -5,6 +5,7 @@ import com.mobios.mlogger.model.Logger;
 import com.mobios.mlogger.response.ResponseMessage;
 
 import java.math.BigDecimal;
+import java.sql.Date;
 import java.util.List;
 
 public interface LogService {
@@ -14,4 +15,7 @@ public interface LogService {
     List<Logger> GetAllLogs();
 
     ResponseMessage InsertLogger(LoggerDTO loggerDTO);
+    
+    List<Logger> GetLogsByDateRange(Date Fromdate, Date ToDate);
+    
 }

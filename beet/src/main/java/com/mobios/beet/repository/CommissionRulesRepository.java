@@ -11,21 +11,16 @@ import java.util.List;
 public interface CommissionRulesRepository extends JpaRepository<CommissionRules,Integer > {
 
 	//find all user comission rates by trans type id
-	List<CommissionRules> findBytransactionTypeId(int transactionTypeId);
-	
+	List<CommissionRules> findBytransactionTypeId(int transactionTypeId);	
 	
 	//update table for fee
 	@Modifying
 	@Transactional
 	void updateCommissionRates(double rate, int usertypeid , int transtypeid );
 	
-	
 	//update table for fee
 	@Modifying
 	@Transactional
 	void updateCommissionInfo(double commisionrate, int usertypeid , int transtypeid);
-
-	
-	
 	
 }

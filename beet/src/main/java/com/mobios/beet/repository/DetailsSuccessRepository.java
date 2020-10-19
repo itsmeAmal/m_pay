@@ -9,7 +9,9 @@ import java.util.List;
 public interface DetailsSuccessRepository extends JpaRepository<TransactionsSuccess, Integer> {
 
 	List<TransactionsSuccess> findByDateBetween(String start, String end);
+	
 	List<TransactionsSuccess> findByDateBetweenAndAccountFromOrDateBetweenAndAccountTo(String start, String end, String Accfrom, String start1, String end1, String accto);
+	
 	List<TransactionsSuccess> findByAccountFromOrAccountTo(String accfrom, String accto);
 }
 

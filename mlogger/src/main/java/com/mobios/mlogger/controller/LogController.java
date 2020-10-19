@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.math.BigDecimal;
+import java.sql.Date;
 import java.util.List;
 
 @RestController
@@ -35,15 +36,18 @@ public class LogController {
     @PostMapping("/insertlog")
     private ResponseMessage insertLogs(@Valid @RequestBody LoggerDTO loggerDTO)
     {
-        System.out.println(loggerDTO.toString());
         return logService.InsertLogger(loggerDTO);
     }
 
-
-
     @GetMapping("/GetAll")
-    public List<Logger> GetAllLogs(){
+    public List<Logger> GetAllLogs()
+    {
         return logService.GetAllLogs();
     }
-
+    
+    @GetMapping("/getbydaterange/{fromdate}/{todate}") 
+    public List<Logger> GetLogsByDateRange(@PathVariable(value = "fromdate") Date fromdate,@PathVariable(value = "todate") Date todate)
+    {
+    	return logService.GetLogsByDateRange(fromdate, todate);   	
+    } 
 }
